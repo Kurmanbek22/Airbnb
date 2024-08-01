@@ -7,7 +7,10 @@ import lombok.Setter;
 import peaksoft.entity.enums.FamilyStatus;
 import peaksoft.entity.enums.Gender;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table(name = "customers")
 @NoArgsConstructor
@@ -29,11 +32,13 @@ public class Customer {
     private String lastName;
     private String email;
     @Column(name = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private String nationality;
     @Enumerated(EnumType.STRING)
     @Column(name = "family_status")
     private FamilyStatus familyStatus;
+    @OneToMany (mappedBy = "customer")
+    private List<RentInfo> rentInfos;
 }

@@ -28,10 +28,10 @@ public class RentInfo {
     private Date checkInDate;
     @Column(name = "check_out_date")
     private Date checkOutDate;
-    @ManyToOne (cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE,
-            CascadeType.REFRESH})
-    private Agency agency;
-
+   @OneToOne
+    private House house;
+    @ManyToOne
+    private Owner owner;
+    @ManyToOne
+    private Customer customer;
 }

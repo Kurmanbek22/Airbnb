@@ -36,10 +36,11 @@ public class House {
     private boolean furniture;
     @OneToOne
     private Address address;
-    @ManyToOne (cascade = {
+    @ManyToOne ( cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE,
             CascadeType.DETACH})
     private Owner owner;
-
+//@OneToMany (mappedBy = "house")
+//    private List<RentInfo>rentInfos;
 }

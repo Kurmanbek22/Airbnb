@@ -10,7 +10,7 @@ import peaksoft.entity.*;
 public class App 
 {
     public static void main( String[] args ) {
-        System.out.println(HibernateConfig.getEntityManagerFactory());
+        System.out.println(HibernateConfig.getEntityManager());
     }
 }
 //  configuration.setProperties(properties);

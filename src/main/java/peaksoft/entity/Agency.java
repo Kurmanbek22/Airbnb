@@ -28,14 +28,8 @@ public class Agency {
     private String phoneNumber;
     @OneToOne
     private Address address;
-    @ManyToMany
+    @ManyToMany (mappedBy = "agencies")
     private List<Owner> owners;
-    @OneToMany (mappedBy = "agancy",cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE,
-            CascadeType.REFRESH,
-            CascadeType.DETACH,
-            CascadeType.REMOVE
-    })
-    private List<RentInfo> rentInfo;
+    @OneToMany
+    private List<RentInfo> rentInfos;
 }

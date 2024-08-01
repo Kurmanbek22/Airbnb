@@ -44,4 +44,6 @@ public class Owner {
             CascadeType.REFRESH,
             CascadeType.REMOVE})
     private List<House> houses;
+    @OneToMany (mappedBy = "owner")
+    private List<RentInfo> rentInfos;
 }
